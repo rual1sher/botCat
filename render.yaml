@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: botcat # имя сервиса, можно изменить
+    env: node
+    region: oregon # или singapore/eu, если хочешь ближе к UZ — попробуй singapore
+    plan: free # или starter за бабки, если free спит часто
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health # для проверки, что бот живой
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BOT_TOKEN
+        sync: false # это секрет — укажешь в дашборде Render вручную
+      - key: MONGODB_KEY
+        sync: false
+      - key: PORT
+        value: 10000 # Render требует, но обычно использует process.env.PORT
