@@ -5,7 +5,7 @@ services:
     region: oregon # или singapore/eu, если хочешь ближе к UZ — попробуй singapore
     plan: free # или starter за бабки, если free спит часто
     buildCommand: npm install
-    startCommand: npm start
+    startCommand: npm run dev
     healthCheckPath: /health # для проверки, что бот живой
     autoDeploy: true
     envVars:
