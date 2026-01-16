@@ -5,6 +5,10 @@ import { env } from "./config/env.config.js";
 
 export const bot = new Telegraf(env.BOT_TOKEN);
 
+setInterval(() => {
+  console.log("ping");
+}, 1000 * 60 * 5);
+
 // session
 bot.use(session());
 
