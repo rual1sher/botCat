@@ -7,7 +7,7 @@ export const bot = new Telegraf(env.BOT_TOKEN);
 
 setInterval(() => {
   console.log("ping");
-}, 1000 * 60 * 1);
+}, 1000 * 20);
 
 // session
 bot.use(session());
