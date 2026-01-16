@@ -1,7 +1,10 @@
 import { bot } from "./bot.ts";
+import { env } from "./config/env.config.ts";
 
 async function bootstrap() {
-  await bot.launch();
+  await bot.launch({
+    webhook: { port: env.PORT, domain: "https://botcat-ku0e.onrender.com" },
+  });
 }
 
 bootstrap();
