@@ -9,11 +9,9 @@ services:
     healthCheckPath: /health # для проверки, что бот живой
     autoDeploy: true
     envVars:
-      - key: NODE_ENV
-        value: production
       - key: BOT_TOKEN
         sync: false # это секрет — укажешь в дашборде Render вручную
       - key: MONGODB_KEY
         sync: false
       - key: PORT
-        value: 10000 # Render требует, но обычно использует process.env.PORT
+        sync: false
